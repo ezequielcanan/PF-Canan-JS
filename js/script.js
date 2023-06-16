@@ -1,4 +1,5 @@
 let carrito = [];
+
 const productosArr = [
   { id: 1, nombre: "Pelota", categoria: "Deportes", precio: 1000 },
   { id: 2, nombre: "Remera", categoria: "Ropa", precio: 7000 },
@@ -26,7 +27,7 @@ function menu() {
         productos();
         break;
       case 2:
-        carrito();
+        carritoOptions();
         break;
       default:
         alert("Opcion no valida");
@@ -41,8 +42,8 @@ function productos() {
   do {
     opcionProductos = Number(
       prompt(
-        verArrayObjetos(productosArr) +
-          "\n\n1. Agregar al carrito\n 2. Filtrar por categoria\n 3. Filtrar por precio menor a:\n 0. Volver al menu principal"
+        " 1. Agregar al carrito\n 2. Filtrar por categoria\n 3. Filtrar por precio menor a:\n 0. Volver al menu principal\n\n" +
+          verArrayObjetos(productosArr)
       )
     );
     if (opcionProductos === 0) {
@@ -55,24 +56,31 @@ function productos() {
     opcionProductos > 3 ||
     isNaN(opcionProductos)
   );
-    switch (opcionProductos) {
-      case 0:
-        menu()
-      case 1:
-        agregar()
-        break
-    }
+  switch (opcionProductos) {
+    case 0:
+      menu();
+    case 1:
+      agregar();
+      break;
+    case 2:
+      alert(verArrayObjetos(filtroProductos("categoria")));
+      menu();
+      break;
+    case 3:
+      alert(verArrayObjetos(filtroProductos("precio")));
+      menu();
+      break;
+  }
 }
 
 function agregar() {
-  let cantidad;
   let producto;
   let exists;
   do {
     producto = Number(
       prompt(
         verArrayObjetos(productosArr) +
-          "\nElige un producto para agregar al carrito, ingresa su id. 0 para volver"
+          "\nElige el id de un producto para agregarlo al carrito, ingresa su id. 0 para volver"
       )
     );
     exists = productosArr.some((p) => p.id === producto);
@@ -82,36 +90,74 @@ function agregar() {
       alert("Ingrese un id correcto");
     }
   } while (!exists);
-  do {
-    cantidad = Number(
-      prompt("Cantidad a comprar del producto elegido: ")
-    );
-    if (isNaN(cantidad)) {
-      alert("Ingresa el numero de productos que desea comprar");
-    }
-  } while (isNaN(cantidad));
-  let indexProduct;
+  let product = productosArr.find((e) => e.id === producto);
+  let tryProduct = carrito.some((e) => e.id === product.id);
+  if (!tryProduct) {
+    product.quantity = 1;
+    carrito.push(product);
+  } else {
+    carrito[carrito.indexOf(product)].quantity += 1;
+  }
   menu();
 }
 
-function carrito() {
+function filtroProductos(filtro) {
+  let optionFiltro;
+  let result;
+  if (filtro === "categoria") {
+    do {
+      optionFiltro = prompt(
+        "Elegi la categoria de productos: \nDeportes - Ropa - Muebles"
+      ).toLowerCase();
+      if (
+        optionFiltro != "deportes" &&
+        optionFiltro != "muebles" &&
+        optionFiltro != "ropa"
+      ) {
+        alert("Opcion no valida");
+      }
+    } while (
+      optionFiltro !== "muebles" &&
+      optionFiltro !== "deportes" &&
+      optionFiltro != "ropa"
+    );
+    result = productosArr.filter(
+      (p) => p.categoria.toLocaleLowerCase() === optionFiltro
+    );
+  } else if (filtro === "precio") {
+    do {
+      optionFiltro = Number(prompt("Filtrar por precio menor a: "));
+      if (isNaN(optionFiltro)) {
+        alert("Opcion no valida");
+      }
+    } while (isNaN(optionFiltro));
+    result = productosArr.filter((p) => p.precio <= optionFiltro);
+  }
+  return result;
+}
+
+function carritoOptions() {
   let carritoOpcion;
   do {
     carritoOpcion = Number(
-      prompt("Total: $" + total + "\n1. Ver carrito\n2. Comprar carrito")
+      prompt("0. Volver\n1. Ver carrito\n2. Comprar carrito")
     );
     switch (carritoOpcion) {
       case 0:
         menu();
         break;
       case 1:
-        total = 0;
-        alert("Carrito borrado");
-        menu();
+        alert(verArrayCarrito(carrito));
         break;
       case 2:
-        total = 0;
-        alert("Carrito comprado");
+        alert(
+          "Total: " +
+            carrito.reduce((a, b) => a + b.quantity * b.precio, 0) +
+            "\n\n" +
+            verArrayCarrito(carrito) +
+            "\n\nCarrito Comprado!"
+        );
+        carrito.splice(0);
         menu();
         break;
       default:
@@ -119,6 +165,8 @@ function carrito() {
     }
   } while (carritoOpcion != 0 || carritoOpcion != 1 || isNaN(carritoOpcion));
 }
+
+//Funciones para ver arrays
 
 function verArrayObjetos(array) {
   let strArray = "ID - Nombre - Precio\n";
@@ -128,4 +176,19 @@ function verArrayObjetos(array) {
   return strArray;
 }
 
+function verArrayCarrito(array) {
+  let strArray = "Producto - Precio/u - Subtotal - Cantidad\n";
+  array.forEach((e) => {
+    strArray +=
+      e.nombre +
+      " - " +
+      e.precio +
+      " - " +
+      e.precio * e.quantity +
+      " -   " +
+      e.quantity +
+      "\n";
+  });
+  return strArray;
+}
 menu();
