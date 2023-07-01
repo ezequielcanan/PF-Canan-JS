@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+/*Colores*/
+$bg-dark: #222831;
+$bg-d-gray: #333;
+$bg-gray: #393e46;
+$bg-light: #eeeeee;
+$bg-white: #fff;
+$bg-blue: #0e91e9;
+$bg-l-blue: #1b9fb6;
+$bg-green: #32e0c4;
+$bg-l-green: #0cf159;
+$bg-buy: #24b024;
+$bg-red: #f10c0c;
+$bg-l-red: #f1820c;
+
+/*Fuente*/
+$main-font: "Ubuntu", sans-serif;
+
+/*Tamaños*/
+$xs: 14px;
+$sm: 18px;
+$md: 24px;
+$lg: 32px;
+$xl: 40px;
+
+/*Segundos*/
+$sec-sm: .1s;
+$sec-md: .4s;
+
+/*Breakpoints*/
+$breakpoints: (
+large: 991px,
+medium: 767px,
+small: 600px,
+xsmall: 480px
+);
+
+/*Buttons*/
+$buttons: (
+primary: $bg-blue,
+buy: $bg-buy,
+danger: $bg-red,
+);

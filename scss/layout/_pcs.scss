@@ -1,0 +1,41 @@
+.container__tienda {
+    background-color: $bg-light;
+
+    &__aside {
+        @include flex-column($gap:30px);
+
+        &__filtro {
+            &__ul {
+                list-style: none;
+                li {
+                    .h3-filtro {
+                        font-size: $md;
+                        color: #777;
+                    }
+                }
+            }
+        }
+        #resetFilters {
+            width: 170px;
+        }
+    }
+    .container__tienda__items {
+        
+        &__cards {
+            justify-content: space-evenly;
+
+            &__card {
+                transition: all $sec-md ease;
+                &:hover {
+                    @include border(1px, $bg-d-gray);
+                }
+                &__body {
+                    .btn-buy-card {
+                        color: $bg-white;
+                        background-color: $bg-blue;
+                    }
+                }
+            }
+        }
+    }
+}

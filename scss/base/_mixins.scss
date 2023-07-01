@@ -1,0 +1,30 @@
+@mixin media-query($breakpoint) {
+    @media screen and (max-width: map-get($breakpoints,$breakpoint)){
+        @content;
+    }
+}
+
+@mixin flex-column($justify:auto, $align:auto, $gap:0) {
+    display: flex;
+    flex-direction: column;
+    justify-content: $justify;
+    align-items: $align;
+    gap: $gap;
+}
+
+@mixin border($b-px, $b-color, $radius:auto, $lados:0, $type:solid) {
+    @if $lados != 0 {
+        @each $lado in $lados{
+            border-#{$lado}: $b-px $b-color $type;
+            border-radius: $radius;
+        }
+    } @else {
+        border: $b-px $b-color $type;
+        border-radius: $radius;
+    }
+}
+
+@mixin size($width:auto,$height:auto) {
+    width: $width;
+    height: $height;
+}

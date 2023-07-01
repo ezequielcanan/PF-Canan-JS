@@ -1,13 +1,177 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Canan</title>
+    <!-- SEO META -->
+    <!-- Primary Meta Tags -->
+    <title>Tienda de Canan Gamer</title>
+    <meta name="title" content="Tienda de Canan Gamer">
+    <meta name="description" content="Esta es nuestra tienda, todos los componentes son originales. En caso de precisar un presupuesto para un equipo personalizado, consultar por WhatsApp.">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://canangamer.000webhostapp.com/">
+    <meta property="og:title" content="Canan Gamer Informatica">
+    <meta property="og:description" content="Somos un emprendimiento familiar con el objetivo de revolucionar el mercado informático, vendiendo equipos a un precio razonable, de la mejor calidad posible.">
+    <meta property="og:image" content="../multimedia/metaimage.png">
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://canangamer.000webhostapp.com/">
+    <meta property="twitter:title" content="Canan Gamer Informatica">
+    <meta property="twitter:description" content="Somos un emprendimiento familiar con el objetivo de revolucionar el mercado informático, vendiendo equipos a un precio razonable, de la mejor calidad posible.">
+    <meta property="twitter:image" content="../multimedia/metaimage.png">
+    <!-- BOOTSTRAP -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body>
-    
-    <script src="./js/script.js"></script>
+    <!--HEADER-->
+    <!--<header>
+        <nav class="navbar navbar-dark navbar-expand-md">
+            <div class="container-fluid">
+                <h1><a class="navbar-brand" href="../index.html">Canan Gamer</a></h1>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-responsive" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbar-responsive">
+                    <div class="navbar-nav">
+                        <a class="nav-link active" aria-current="page" href="../index.html">Inicio</a>
+                        <a class="nav-link" href="contacto.html">Contacto</a>
+                        <a class="nav-link" href="componentes.html">Marcas</a>
+                        <a class="nav-link" href="pcs.html">PCs</a>
+                        <a class="nav-link" href="nosotros.html">Nosotros</a>
+                    </div>
+                </div>
+            </div>  
+        </nav>
+    </header>-->
+    <!--MAIN-->
+    <main class="container-fluid main-tienda">
+        <section class="row container__tienda p-5">
+            <aside class="container__tienda__aside col-lg-3">
+                <div class="container__tienda__aside__header">
+                    <h2 class="container__tienda__aside__header__h">Ordenar por: </h2>
+                </div>
+                <div class="container__tienda__aside__filtro container__tienda__aside__filtro-cpu">
+                    <ul class="container__tienda__aside__filtro__ul">
+                        <li>
+                            <h3 class="h3-filtro">Procesador:</h3>
+                        </li>
+                        <li class="container-input">
+                            <input class="input-filtro" type="radio" name="cpu" value="intel" id="intel">
+                            <label class="label-filtro" for="intel">Intel</label>
+                        </li>
+                        <li class="container-input">
+                            <input class="input-filtro" type="radio" name="cpu" value="amd" id="amd">
+                            <label class="label-filtro" for="amd">Amd</label>
+                        </li>
+                    </ul>
+                </div>
+                <div class="container__tienda__aside__filtro container__tienda__aside__filtro-mother">
+                    <ul class="container__tienda__aside__filtro__ul">
+                        <li class="titulo-filtro">
+                            <h3 class="h3-filtro">Motherboard:</h3>
+                        </li>
+                        <li class="container-input">
+                            <input class="input-filtro" type="radio" name="mother" value="msi" id="msi">
+                            <label class="label-filtro" for="msi">Msi</label>
+                        </li>
+                        <li class="container-input">
+                            <input class="input-filtro" type="radio" name="mother" value="asus" id="asus">
+                            <label class="label-filtro" for="asus">Asus</label>
+                        </li>
+                        <li class="container-input">
+                            <input class="input-filtro" type="radio" name="mother" value="aorus" id="aorus">
+                            <label class="label-filtro" for="aourus">Aorus</label>
+                        </li>
+                        <li class="container-input">
+                            <input class="input-filtro" type="radio" name="mother" value="gigabyte" id="gigabyte">
+                            <label class="label-filtro" for="gigabyte">Gigabyte</label>
+                        </li>
+                    </ul>
+                </div>
+                <div class="container__tienda__aside__filtro container__tienda__aside__filtro-ram">
+                    <ul class="container__tienda__aside__filtro__ul">
+                        <li class="titulo-filtro">
+                            <h3 class="h3-filtro">Memoria ram:</h3>
+                        </li>
+                        
+                        <li class="container-input">
+                            <input class="input-filtro" type="radio" name="ram" value="16" id="16">
+                            <label class="label-filtro" for="16">16gb</label>
+                        </li>
+                        <li class="container-input">
+                            <input class="input-filtro" type="radio" name="ram" value="32" id="32">
+                            <label class="label-filtro" for="32">32gb</label>
+                        </li>
+                    </ul>
+                </div>
+                <div class="reset-container">
+                    <button class="btn btn-primary" id="resetFilters">Resetear filtros</button>
+                </div>
+            </aside>
+            <section class="container__tienda__items col-lg-9">
+                <section class="row container__tienda__items__cards" id="cardsContainer">
+                </section>
+            </section>
+        </section>
+    </main>
+    <!--FOOTER-->
+    <!--<footer>
+        <section class="seccion-logo">
+            <div class="container-animated-card">
+                <div class="front-card card-side">
+                    <img class="logo logo-footer" src="../multimedia/canan-gamer.png" alt="Logo del footer animado">
+                </div>
+                <div class="back-card card-side">
+                    <ul>
+                        <li class="li-footer no-link"><i class="fa-solid fa-phone"></i></li>
+                        <li class="li-footer no-link">Horarios de atencion:</li>
+                        <li class="li-footer no-link">8:00hs a 18:00hs</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section class="seccion-footer categorias-footer">
+            <span class="title-footer">Categorias</span>
+            <ul>
+                <li class="li-footer"><a class="a-footer" href="./pcs.html">PCs</a></li>
+                <li class="li-footer"><a class="a-footer" href="./componentes.html">Componentes</a></li>
+                <li class="li-footer"><a class="a-footer" href="./nosotros.html">Nosotros</a></li>
+            </ul>
+        </section>
+        <section class="seccion-footer marcas-footer">
+            <span class="title-footer">Marcas</span>
+            <ul>
+                <li class="li-footer"><a class="a-footer" href="./componentes.html#intel">Intel</a></li>
+                <li class="li-footer"><a class="a-footer" href="./componentes.html#amd">Amd</a></li>
+                <li class="li-footer"><a class="a-footer" href="./componentes.html#nvidia">Nvidia</a></li>
+                <li class="li-footer"><a class="a-footer" href="./componentes.html#giga">Gigabyte</a></li>
+            </ul>
+        </section>
+        <section class="seccion-footer contacto-footer">
+            <span class="title-footer">Contacto</span>
+            <ul>
+                <li class="li-footer"><a class="a-footer" href="#">11 1234-5678</a></li>
+                <li class="li-footer"><a class="a-footer" href="#">WhatsApp</a></li>
+                <li class="li-footer no-link">ezequielcanan@gmail.com</li>
+            </ul>
+        </section>
+        <section class="seccion-footer redes-footer">
+            <span class="title-footer">Redes</span>
+            <div class="redes-botones">
+                <a href="#"><i class="fa-brands fa-twitter fa-xl"></i></a>
+                <a href="https://github.com/ezequielcanan" target="_blank"><i class="fa-brands fa-github fa-xl"></i></a>
+                <a href="#"><i class="fa fa-whatsapp fa-xl"></i></a>
+            </div>
+        </section>
+    </footer>-->
+    <!-- BOOTSTRAP JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
+    <!-- FA -->
+    <script src="https://kit.fontawesome.com/3d73e2b584.js" crossorigin="anonymous"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>

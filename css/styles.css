@@ -1,0 +1,103 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu&display=swap");
+/*Colores*/
+/*Fuente*/
+/*Tamaños*/
+/*Segundos*/
+/*Breakpoints*/
+/*Buttons*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Ubuntu", sans-serif;
+}
+
+/*Buttons*/
+.btn-primary {
+  transition: all 0.1s ease;
+  border: none;
+  border-radius: 0.4em;
+  background-color: #0e91e9;
+  width: 100px;
+  height: auto;
+  padding: 10px 20px;
+  color: #fff;
+}
+.btn-primary:hover {
+  background-color: #0b73b9;
+}
+.btn-primary:active {
+  transform: scale(0.94);
+}
+
+.btn-buy {
+  transition: all 0.1s ease;
+  border: none;
+  border-radius: 0.4em;
+  background-color: #24b024;
+  width: 100px;
+  height: auto;
+  padding: 10px 20px;
+  color: #fff;
+}
+.btn-buy:hover {
+  background-color: #1b861b;
+}
+.btn-buy:active {
+  transform: scale(0.94);
+}
+
+.btn-danger {
+  transition: all 0.1s ease;
+  border: none;
+  border-radius: 0.4em;
+  background-color: #f10c0c;
+  width: 100px;
+  height: auto;
+  padding: 10px 20px;
+  color: #fff;
+}
+.btn-danger:hover {
+  background-color: #c00a0a;
+}
+.btn-danger:active {
+  transform: scale(0.94);
+}
+
+.container__tienda {
+  background-color: #eeeeee;
+}
+.container__tienda__aside {
+  display: flex;
+  flex-direction: column;
+  justify-content: auto;
+  align-items: auto;
+  gap: 30px;
+}
+.container__tienda__aside__filtro__ul {
+  list-style: none;
+}
+.container__tienda__aside__filtro__ul li .h3-filtro {
+  font-size: 24px;
+  color: #777;
+}
+.container__tienda__aside #resetFilters {
+  width: 170px;
+}
+.container__tienda .container__tienda__items__cards {
+  justify-content: space-evenly;
+}
+.container__tienda .container__tienda__items__cards__card {
+  transition: all 0.4s ease;
+}
+.container__tienda .container__tienda__items__cards__card:hover {
+  border: 1px #333 solid;
+  border-radius: auto;
+}
+.container__tienda .container__tienda__items__cards__card__body .btn-buy-card {
+  color: #fff;
+  background-color: #0e91e9;
+}
+
+/*# sourceMappingURL=styles.css.map */
