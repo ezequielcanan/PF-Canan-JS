@@ -5,6 +5,7 @@ function main() {
     { id: 3, gpu: "3090ti", mother: "Aorus", cpu: "Intel", cpuDescription: "Intel I9-13900K", ram: "32gb", ssd: "480gb", price: 1239, pathImage: `./multimedia/pc3.png` },
     { id: 4, gpu: "4090ti", mother: "Asus", cpu: "AMD", cpuDescription: "AMD 5600G", ram: "32gb", ssd: "1000gb", price: 1489, pathImage: `./multimedia/pc4.jpg` },
   ];
+  sessionStorage.setItem("carrito", JSON.stringify([]))
   createFilters(pcsArr)
   renderizar(pcsArr)
   /*Boton reset filtros*/
@@ -16,7 +17,7 @@ function main() {
   /*Evento agregar al carrito*/
   let buttonsAgregarAlCarrito = document.querySelectorAll(".btn-buy-card")
   for (const btn of buttonsAgregarAlCarrito) {
-    btn.addEventListener("click", ({ target: { id } }) => agregarAlCarrito(id))
+    btn.addEventListener("click", ({ target: { id } }) => agregarAlCarrito(id, pcsArr))
   }
 
 }
@@ -32,26 +33,36 @@ function renderizar(arr) {
   for (let filtro in filtrosAObjeto()) {
     pcsRender = pcsRender.filter((pc) => pc[filtro].toLowerCase().includes(filtrosAObjeto()[filtro].toLowerCase()))
   }
-  pcsRender.forEach((card) => {
-    cardsContainer.innerHTML += `<div class="card container__tienda__items__cards__card mb-3 col-md-5">
-    <img src=${card.pathImage} class="card-img-top" alt="Imagen de pc con la gpu ${card.gpu}">
-    <div class="card-body container__tienda__items__cards__card__body">
-    <h4 class="card-title">${card.price} USD</h4>
-    <p class="card-text">PC armada gamer con ${card.ram} de ram, ${card.ssd}gb, ${card.cpuDescription} y la gpu RTX ${card.gpu}.</p>
-    <button class="btn btn-buy-card" id=${card.id}>Agregar al carrito</button>
-    </div>
-    </div>`;
-  });
+  if (!pcsRender.length) {
+    cardsContainer.innerHTML = `<div class="no-results">
+    <h4>No hay resultados disponibles</h4>
+    <p>Los parametros de su busqueda no coinciden con ningun producto</p>
+    </div>`
+  } else {
+    pcsRender.forEach((card) => {
+      cardsContainer.innerHTML += `<div class="card container__tienda__items__cards__card mb-3 col-md-5">
+      <img src=${card.pathImage} class="card-img-top" alt="Imagen de pc con la gpu ${card.gpu}">
+      <div class="card-body container__tienda__items__cards__card__body">
+      <h4 class="card-title">${card.price} USD</h4>
+      <p class="card-text">PC armada gamer con ${card.ram} de ram, ${card.ssd}gb, ${card.cpuDescription} y la gpu RTX ${card.gpu}.</p>
+      <button class="btn btn-buy-card" id=${card.id}>Agregar al carrito</button>
+      </div>
+      </div>`;
+    });
+  }
 }
 
 function agregarAlCarrito(id, arr) {
   let producto = arr.find((pc) => pc.id == id)
-  if (carrito.includes(producto)) {
-    carrito[carrito.indexOf(producto)].cantidad++
+  let carrito = carritoAObjeto()
+  let indexProducto = carrito.findIndex((pc) => pc.id == id)
+  if (indexProducto != -1) {
+    carrito[indexProducto].cantidad++
   } else {
     producto.cantidad = 1
     carrito.push(producto)
   }
+  sessionStorage.setItem("carrito", JSON.stringify(carrito))
 }
 
 function createFilters(arr) {
@@ -86,6 +97,10 @@ function applyFilter(filtro, name, arr) {
 
 function filtrosAObjeto() {
   return JSON.parse(sessionStorage.getItem("filtros"))
+}
+// decido hacer dos funciones y no una con parametro para que sea mas intuitivo al llamarlas.
+function carritoAObjeto() {
+  return JSON.parse(sessionStorage.getItem("carrito"))
 }
 
 function resetearFiltros(arr1,arr2) {

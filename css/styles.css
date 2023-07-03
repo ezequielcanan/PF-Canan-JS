@@ -99,5 +99,18 @@
   color: #fff;
   background-color: #0e91e9;
 }
+.container__tienda .container__tienda__items__cards .no-results {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 500px;
+}
+.container__tienda .container__tienda__items__cards .no-results h4 {
+  text-align: center;
+}
+.container__tienda .container__tienda__items__cards .no-results p {
+  text-align: center;
+}
 
 /*# sourceMappingURL=styles.css.map */
