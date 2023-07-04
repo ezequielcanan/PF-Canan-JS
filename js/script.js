@@ -14,12 +14,6 @@ function main() {
   resetFilters.onclick = () => {
     resetearFiltros(inputsFiltros, pcsArr)
   }
-  /*Evento agregar al carrito*/
-  let buttonsAgregarAlCarrito = document.querySelectorAll(".btn-buy-card")
-  for (const btn of buttonsAgregarAlCarrito) {
-    btn.addEventListener("click", ({ target: { id } }) => agregarAlCarrito(id, pcsArr))
-  }
-
 }
 
 main()
@@ -49,6 +43,11 @@ function renderizar(arr) {
       </div>
       </div>`;
     });
+    /*Evento agregar al carrito*/
+    let buttonsAgregarAlCarrito = document.querySelectorAll(".btn-buy-card")
+    for (const btn of buttonsAgregarAlCarrito) {
+      btn.addEventListener("click", ({ target: { id } }) => agregarAlCarrito(id, arr))
+    }
   }
 }
 
@@ -78,7 +77,7 @@ function createFilters(arr) {
         <label class="label-filtro" for="${pc[filtro]}">${pc[filtro]}</label>`
         options.push(pc[filtro])
         ulFiltro[0].appendChild(option)
-
+        
         let inputBtn = document.getElementById(pc[filtro])
         inputBtn.addEventListener("input", ({target:{id, name}}) => applyFilter(id, name, arr))
       }
