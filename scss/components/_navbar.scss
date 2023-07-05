@@ -1,0 +1,41 @@
+.navbar-expand-md {
+    background-color: $bg-gray;
+    
+    .navbar-collapse {
+        justify-content: flex-end;
+        
+        .navbar-nav {
+            gap: 30px;
+
+            .carrito-icon {
+                align-self: center;
+                padding: 15px;
+                border-radius: 50%;
+                background-color: $bg-white;
+                color: $bg-gray;
+                transition: all $sec-md ease;
+                &:hover {
+                    background-color: #a5a5a5;
+                }
+            }
+            
+            
+            
+            a {
+                color: $bg-light;
+                &:hover {
+                    color: $bg-green !important;
+                }
+                &:focus {
+                    color: $bg-light;
+                }
+            }
+            
+            .active {
+                color: $bg-light !important;
+            }
+            
+        }
+        
+    }
+}

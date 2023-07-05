@@ -65,6 +65,39 @@
   transform: scale(0.94);
 }
 
+.navbar-expand-md {
+  background-color: #393e46;
+}
+.navbar-expand-md .navbar-collapse {
+  justify-content: flex-end;
+}
+.navbar-expand-md .navbar-collapse .navbar-nav {
+  gap: 30px;
+}
+.navbar-expand-md .navbar-collapse .navbar-nav .carrito-icon {
+  align-self: center;
+  padding: 15px;
+  border-radius: 50%;
+  background-color: #fff;
+  color: #393e46;
+  transition: all 0.4s ease;
+}
+.navbar-expand-md .navbar-collapse .navbar-nav .carrito-icon:hover {
+  background-color: #a5a5a5;
+}
+.navbar-expand-md .navbar-collapse .navbar-nav a {
+  color: #eeeeee;
+}
+.navbar-expand-md .navbar-collapse .navbar-nav a:hover {
+  color: #32e0c4 !important;
+}
+.navbar-expand-md .navbar-collapse .navbar-nav a:focus {
+  color: #eeeeee;
+}
+.navbar-expand-md .navbar-collapse .navbar-nav .active {
+  color: #eeeeee !important;
+}
+
 .container__tienda {
   background-color: #eeeeee;
 }
@@ -74,6 +107,58 @@
   justify-content: auto;
   align-items: auto;
   gap: 30px;
+}
+.container__tienda__aside .hide {
+  display: none !important;
+}
+.container__tienda__aside .carrito-fisico {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.container__tienda__aside .carrito-fisico .carritoProduct {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 10px;
+}
+.container__tienda__aside .carrito-fisico .carritoProduct .cardCarrito {
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 15px;
+  gap: 10px;
+  padding: 15px 10px 10px 0;
+  height: 70px;
+  width: 250px;
+}
+.container__tienda__aside .carrito-fisico .carritoProduct .cardCarrito .container-img-carrito {
+  height: 70px;
+  width: 70px;
+}
+.container__tienda__aside .carrito-fisico .carritoProduct .cardCarrito .container-img-carrito img {
+  width: 100%;
+  height: 100%;
+}
+.container__tienda__aside .carrito-fisico .carritoProduct .cardCarrito .container-info-carrito {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 70px;
+}
+.container__tienda__aside .carrito-fisico .carritoProduct .cardCarrito .container-info-carrito p {
+  font-size: 12px;
+}
+.container__tienda__aside .carrito-fisico .carritoProduct .delete-product {
+  padding: 10px;
+  border-radius: 2px;
+  background-color: #fff;
+  transition: all 0.4s ease;
+}
+.container__tienda__aside .carrito-fisico .carritoProduct .delete-product:hover {
+  background-color: #aaa;
 }
 .container__tienda__aside__filtro__ul {
   list-style: none;
@@ -111,6 +196,152 @@
 }
 .container__tienda .container__tienda__items__cards .no-results p {
   text-align: center;
+}
+
+/*992 PIXELES*/
+@media screen and (max-width: 991px) {
+  /*Footer*/
+  footer {
+    grid-template-columns: 40% 40% !important;
+    grid-template-rows: auto;
+    align-content: center;
+    gap: 30px;
+    grid-template-areas: "logo logo" "categorias marcas" "contacto redes";
+    padding: 60px 0;
+  }
+  footer ul li {
+    text-align: center;
+  }
+  footer .seccion-logo {
+    grid-area: logo;
+    justify-self: center;
+    text-align: center;
+  }
+  footer .seccion-footer .title-footer {
+    align-self: center;
+  }
+  footer .categorias-footer {
+    grid-area: categorias;
+  }
+  footer .marcas-footer {
+    grid-area: marcas;
+  }
+  footer .contacto-footer {
+    grid-area: contacto;
+  }
+  footer .redes-footer {
+    grid-area: redes;
+  }
+  /*Index*/
+  .container__two__puntos {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas: "garantia service" "calidad calidad";
+  }
+  .container__two__puntos .garantia {
+    grid-area: garantia;
+  }
+  .container__two__puntos .service {
+    grid-area: service;
+  }
+  .container__two__puntos .calidad {
+    grid-area: calidad;
+  }
+  /*Componentes*/
+  .container__componentes__galeria {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas: "asus aorus" "giga giga" "intel amd" "nvidia nvidia";
+  }
+  .container__componentes__galeria__container__img__img {
+    filter: grayscale(0);
+  }
+  /*PCS*/
+  .container__tienda__aside {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas: "titulo titulo titulo" "cpu mother ram";
+    justify-items: center;
+    align-content: center;
+    padding-bottom: 30px;
+  }
+  .container__tienda__aside__header {
+    grid-area: titulo;
+  }
+  .container__tienda__aside__filtro-mother {
+    grid-area: mother;
+  }
+  .container__tienda__aside__filtro-cpu {
+    grid-area: cpu;
+  }
+  .container__tienda__aside__filtro-ram {
+    grid-area: ram;
+  }
+}
+@media screen and (max-width: 767px) {
+  /*Navbar*/
+  .navbar-expand-md .navbar-collapse .navbar-nav {
+    gap: 0;
+  }
+  /*Contacto*/
+  .container__form__inputs__button {
+    align-self: flex-end;
+  }
+  .main-form .container__form__inputs__lista__input {
+    width: 100%;
+    height: auto;
+  }
+  /*PCS*/
+  .container__tienda__aside {
+    grid-template-columns: 1fr;
+    grid-template-areas: "titulo" "cpu" "mother" "ram";
+  }
+  /*Nosotros*/
+  .texto-nosotros h2 {
+    font-size: 32px;
+  }
+  .texto-nosotros h3 {
+    font-size: 24px;
+  }
+  .texto-nosotros p {
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .container__two__puntos {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas: "garantia" "service" "calidad";
+    gap: 30px;
+  }
+  /*CONTACTO*/
+  .main-form .container__form__icon {
+    font-size: 200px;
+  }
+  /*Componentes*/
+  .container__componentes__galeria {
+    grid-template-columns: 1fr;
+    grid-template-areas: "asus" "aorus" "giga" "intel" "amd" "nvidia";
+  }
+  .container__componentes__parrafo__p {
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 480px) {
+  footer {
+    grid-template-columns: 1fr !important;
+    grid-template-rows: auto;
+    align-content: center;
+    grid-template-areas: "logo" "categorias" "marcas" "contacto" "redes";
+  }
+  /*CONTACTO*/
+  .main-form .container__form__icon {
+    font-size: 150px;
+  }
+  .main-form .container__form__inputs__button {
+    align-self: center;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */

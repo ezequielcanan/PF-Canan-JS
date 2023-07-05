@@ -1,0 +1,233 @@
+/*992 PIXELES*/
+@include media-query(large) {
+    /*Footer*/
+    footer {
+        grid-template-columns: 40% 40% !important;
+        grid-template-rows: auto;
+        align-content: center;
+        gap: 30px;
+        grid-template-areas: 
+        "logo logo"
+        "categorias marcas"
+        "contacto redes";
+        padding: 60px 0;
+        ul {
+            li {
+                text-align: center;
+            }
+        }
+        .seccion-logo {
+            grid-area: logo;
+            justify-self: center;
+            text-align: center;
+        }
+        .seccion-footer {
+            .title-footer {
+                align-self: center;
+            }
+        }
+        .categorias-footer {
+            grid-area: categorias;
+        }
+        .marcas-footer {
+            grid-area: marcas;
+        }
+        .contacto-footer {
+            grid-area: contacto;
+        }
+        .redes-footer {
+            grid-area: redes;
+        }
+    }
+    
+    /*Index*/
+    .container__two {
+        &__puntos {
+            grid-template-columns: repeat(2,1fr);
+            grid-template-rows: repeat(2,1fr);
+            grid-template-areas: 
+            "garantia service"
+            "calidad calidad";
+            .garantia {
+                grid-area: garantia;
+            }
+            
+            .service {
+                grid-area: service;
+            }
+            
+            .calidad {
+                grid-area: calidad;
+            }
+        }
+    }
+    
+    /*Componentes*/
+    .container__componentes {
+        &__galeria {
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: auto;
+            grid-template-areas: 
+            "asus aorus"
+            "giga giga"
+            "intel amd"
+            "nvidia nvidia";
+            &__container__img {
+                &__img {
+                    filter: grayscale(0);
+                }
+            }
+        }
+    }
+    
+    /*PCS*/
+    .container__tienda {
+        &__aside {
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            grid-template-rows: auto;
+            grid-template-areas: 
+            "titulo titulo titulo"
+            "cpu mother ram";
+            justify-items: center;
+            align-content: center;
+            padding-bottom: 30px;
+            
+            &__header {
+                grid-area: titulo;
+            }
+            
+            &__filtro {
+                &-mother {
+                    grid-area: mother;
+                }
+                &-cpu {
+                    grid-area: cpu;
+                }
+                &-ram {
+                    grid-area: ram;
+                }
+            }
+        }
+    }
+}
+
+@include media-query(medium) {
+    /*Navbar*/
+    .navbar-expand-md {
+        .navbar-collapse {
+            .navbar-nav {
+                gap: 0;
+            }
+        }
+    }
+    
+    /*Contacto*/
+    .container__form__inputs__button {
+        align-self: flex-end;
+    }
+    .main-form {
+        .container__form {
+            &__inputs {
+                &__lista {
+                    &__input {
+                        @include size(100%);
+                    }
+                }
+            }
+        }
+    }
+    
+    /*PCS*/
+    .container__tienda {
+        &__aside {
+            grid-template-columns: 1fr;
+            grid-template-areas: 
+            "titulo"
+            "cpu"
+            "mother"
+            "ram";
+        }
+    }
+    
+    /*Nosotros*/
+    .texto-nosotros {
+        h2 {
+            font-size: $lg;
+        }
+        h3 {
+            font-size: $md;
+        }
+        p {
+            font-size: $sm;
+        }
+    }
+}
+
+@include media-query(small) {
+    .container__two {
+        &__puntos {
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(3,1fr);
+            grid-template-areas: 
+            "garantia"
+            "service"
+            "calidad";
+            gap: 30px;
+        }
+    }
+    
+    /*CONTACTO*/
+    .main-form {
+        .container__form {
+            &__icon {
+                font-size: 200px;
+            }
+        }
+    }
+    
+    /*Componentes*/
+    .container__componentes {
+        &__galeria {
+            grid-template-columns: 1fr;
+            grid-template-areas: 
+            "asus"
+            "aorus"
+            "giga"
+            "intel"
+            "amd"
+            "nvidia";
+        }
+        &__parrafo {
+            &__p {
+                font-size: $sm;
+            }
+        }
+    }
+}
+
+@include media-query(xsmall) {
+    footer {
+        grid-template-columns: 1fr !important;
+        grid-template-rows: auto;
+        align-content: center;
+        grid-template-areas: 
+        "logo"
+        "categorias"
+        "marcas"
+        "contacto"
+        "redes";
+    }
+    
+    /*CONTACTO*/
+    .main-form {
+        .container__form {
+            &__icon {
+                font-size: 150px;
+            }
+            &__inputs__button {
+                align-self: center;
+            }
+        }
+    }
+}

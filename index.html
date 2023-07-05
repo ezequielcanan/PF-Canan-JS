@@ -28,7 +28,7 @@
 </head>
 <body>
     <!--HEADER-->
-    <!--<header>
+    <header>
         <nav class="navbar navbar-dark navbar-expand-md">
             <div class="container-fluid">
                 <h1><a class="navbar-brand" href="../index.html">Canan Gamer</a></h1>
@@ -37,54 +37,58 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbar-responsive">
                     <div class="navbar-nav">
-                        <a class="nav-link active" aria-current="page" href="../index.html">Inicio</a>
-                        <a class="nav-link" href="contacto.html">Contacto</a>
-                        <a class="nav-link" href="componentes.html">Marcas</a>
-                        <a class="nav-link" href="pcs.html">PCs</a>
-                        <a class="nav-link" href="nosotros.html">Nosotros</a>
+                        <i class="fa-solid fa-cart-shopping carrito-icon" id="carritoIcon"></i>
+                        <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                        <a class="nav-link" href="#">Contacto</a>
+                        <a class="nav-link" href="#">Marcas</a>
+                        <a class="nav-link" href="#">PCs</a>
+                        <a class="nav-link" href="#">Nosotros</a>
                     </div>
                 </div>
             </div>  
         </nav>
-    </header>-->
+    </header>
     <!--MAIN-->
     <main class="container-fluid main-tienda">
         <section class="row container__tienda p-5">
             <aside class="container__tienda__aside col-lg-3">
-                <div class="container__tienda__aside__header">
-                    <h2 class="container__tienda__aside__header__h">Ordenar por: </h2>
+                <div id="containerFiltros">
+                    <div class="container__tienda__aside__header">
+                        <h2 class="container__tienda__aside__header__h">Ordenar por: </h2>
+                    </div>
+                    <div class="container__tienda__aside__filtro container__tienda__aside__filtro-cpu">
+                        <ul class="container__tienda__aside__filtro__ul">
+                            <li>
+                                <h3 class="h3-filtro">Procesador:</h3>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="container__tienda__aside__filtro container__tienda__aside__filtro-mother">
+                        <ul class="container__tienda__aside__filtro__ul">
+                            <li class="titulo-filtro">
+                                <h3 class="h3-filtro">Motherboard:</h3>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="container__tienda__aside__filtro container__tienda__aside__filtro-ram">
+                        <ul class="container__tienda__aside__filtro__ul">
+                            <li class="titulo-filtro">
+                                <h3 class="h3-filtro">Memoria ram:</h3>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="container__tienda__aside__filtro container__tienda__aside__filtro-ssd">
+                        <ul class="container__tienda__aside__filtro__ul">
+                            <li class="titulo-filtro">
+                                <h3 class="h3-filtro">Almacenamiento:</h3>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="reset-container">
+                        <button class="btn btn-primary" id="resetFilters">Resetear filtros</button>
+                    </div>
                 </div>
-                <div class="container__tienda__aside__filtro container__tienda__aside__filtro-cpu">
-                    <ul class="container__tienda__aside__filtro__ul">
-                        <li>
-                            <h3 class="h3-filtro">Procesador:</h3>
-                        </li>
-                    </ul>
-                </div>
-                <div class="container__tienda__aside__filtro container__tienda__aside__filtro-mother">
-                    <ul class="container__tienda__aside__filtro__ul">
-                        <li class="titulo-filtro">
-                            <h3 class="h3-filtro">Motherboard:</h3>
-                        </li>
-                    </ul>
-                </div>
-                <div class="container__tienda__aside__filtro container__tienda__aside__filtro-ram">
-                    <ul class="container__tienda__aside__filtro__ul">
-                        <li class="titulo-filtro">
-                            <h3 class="h3-filtro">Memoria ram:</h3>
-                        </li>
-                    </ul>
-                </div>
-                <div class="container__tienda__aside__filtro container__tienda__aside__filtro-ssd">
-                    <ul class="container__tienda__aside__filtro__ul">
-                        <li class="titulo-filtro">
-                            <h3 class="h3-filtro">Almacenamiento:</h3>
-                        </li>
-                    </ul>
-                </div>
-                <div class="reset-container">
-                    <button class="btn btn-primary" id="resetFilters">Resetear filtros</button>
-                </div>
+                <div class="carrito-fisico hide" id="carritoFisico"></div>
             </aside>
             <section class="container__tienda__items col-lg-9">
                 <section class="row container__tienda__items__cards" id="cardsContainer">
