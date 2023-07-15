@@ -1,0 +1,46 @@
+[
+    {
+        "id": 1,
+        "gpu": "2060s",
+        "mother": "Gigabyte",
+        "cpu": "Intel",
+        "cpuDescription": "Intel I3-10100F",
+        "ram": "16gb",
+        "ssd": "480gb",
+        "price": 979,
+        "pathImage": "./multimedia/pc1.png"
+    },
+    {
+        "id": 2,
+        "gpu": "3070ti",
+        "mother": "Asus",
+        "cpu": "Intel",
+        "cpuDescription": "Intel I7-10700F",
+        "ram": "16gb",
+        "ssd": "480gb",
+        "price": 1189,
+        "pathImage": "./multimedia/pc2.png"
+    },
+    {
+        "id": 3,
+        "gpu": "3090ti",
+        "mother": "Aorus",
+        "cpu": "Intel",
+        "cpuDescription": "Intel I9-13900K",
+        "ram": "32gb",
+        "ssd": "480gb",
+        "price": 1239,
+        "pathImage": "./multimedia/pc3.png"
+    },
+    {
+        "id": 4,
+        "gpu": "4090ti",
+        "mother": "Asus",
+        "cpu": "AMD",
+        "cpuDescription": "AMD 5600G",
+        "ram": "32gb",
+        "ssd": "1000gb",
+        "price": 1489,
+        "pathImage": "./multimedia/pc4.jpg"
+    }
+]

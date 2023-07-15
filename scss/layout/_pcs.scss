@@ -104,3 +104,23 @@
         }
     }
 }
+
+.toastBought {
+    background: linear-gradient(45deg, $bg-buy, $bg-buy, $bg-buy, #fff9, $bg-buy, $bg-buy, $bg-buy);
+    background-size: 300%;
+    background-position: right;
+    animation: destello 2s ease;
+}
+
+@keyframes destello {
+    0% {
+        background-position: right;
+    }
+    100% {
+        background-position: left;
+    }
+}
+
+.btn-sweet-comprar {
+    background-color: $bg-l-blue !important;
+}

@@ -198,6 +198,25 @@
   text-align: center;
 }
 
+.toastBought {
+  background: linear-gradient(45deg, #24b024, #24b024, #24b024, rgba(255, 255, 255, 0.6), #24b024, #24b024, #24b024);
+  background-size: 300%;
+  background-position: right;
+  animation: destello 2s ease;
+}
+
+@keyframes destello {
+  0% {
+    background-position: right;
+  }
+  100% {
+    background-position: left;
+  }
+}
+.btn-sweet-comprar {
+  background-color: #1b9fb6 !important;
+}
+
 /*992 PIXELES*/
 @media screen and (max-width: 991px) {
   /*Footer*/
